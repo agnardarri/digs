@@ -10,7 +10,7 @@
     "watch-css": "stylus public/stylesheets/style.styl -o public/stylesheets/css -w",
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "watchstart": "npm run watch-css & nodemon ./bin/www",
+    "watchstart": "npm run watch-css & nodemon ./bin/www"
   },
   "dependencies": {
     "async": "^3.2.0",
