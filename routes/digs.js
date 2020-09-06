@@ -21,22 +21,7 @@ router.get('/yfirlit', dig_controller.yfirlit);
 router.get('/all', dig_controller.dig_list);
 
 // GET request for creating a dig. NOTE This must come before routes that display dig (uses id).
-router.get('/dig/create', dig_controller.dig_create_get);
-
-// POST request for creating dig.
-router.post('/dig/create', dig_controller.dig_create_post);
-
-// GET request to delete dig.
-router.get('/dig/:id/delete', dig_controller.dig_delete_get);
-
-// POST request to delete dig.
-router.post('/dig/:id/delete', dig_controller.dig_delete_post);
-
-// GET request to update dig.
-router.get('/dig/:id/update', dig_controller.dig_update_get);
-
-// POST request to update dig.
-router.post('/dig/:id/update', dig_controller.dig_update_post);
+// router.get('/dig/create', dig_controller.dig_create_get);
 
 // GET request for one dig.
 router.get('/dig/:id', dig_controller.dig_detail);

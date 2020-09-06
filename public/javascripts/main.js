@@ -2,7 +2,8 @@ console.log("main.js");
 
 // var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 var icelandCenter = [64.9928797, -18.9224775];
-var icelandWest = [-23.1455075, 64.6103345];
+var icelandWest = [-21.4439377, 64.4243157];
+
 // Load map
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWduYXJkYXJyaSIsImEiOiJja2N3YXU4ZXowY2JwMnRxdTVxOTM0cndkIn0.F-R2ofLT1K26zs8vhV5PVg';
 
@@ -19,8 +20,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWduYXJkYXJyaSIsImEiOiJja2N3YXU4ZXowY2JwMnRxd
 var map = new mapboxgl.Map({
   container: "mapcontainer",
   style: 'mapbox://styles/mapbox/satellite-v9',
-  center: icelandCenter.reverse(),
-  zoom: 6.15
+  center: icelandWest,
+  zoom: 7.15
 });
 
 var popup = new mapboxgl.Popup({
@@ -150,7 +151,7 @@ map.on('load', () => {
           'tags': d.tags.join(', '),
           'tag_dyrabein': d.tags.includes('dýrabein'),
           'tag_gripir': d.tags.includes('gripir'),
-          'tag_grafir': d.tags.includes('grafir'),
+          'tag_grafir': d.tags.includes('gröf/grafir'),
           'tag_mannabein': d.tags.includes('mannabein'),
           'tag_mannvirki': d.tags.includes('mannvirki'),
           'tag_ekkert': d.tags == '',
@@ -219,9 +220,13 @@ map.on('load', () => {
         'layout': {
           'text-field': ['get', 'title'],
           // 'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
-          'text-radial-offset': 0.5,
+          'text-anchor': 'bottom',
+          'text-radial-offset': 1,
           'text-justify': 'auto',
           'visibility': 'none'
+        },
+        'paint': {
+          'text-color': "#ffffff"
         },
         'filter': ['==', layerID, true]
       });
@@ -248,20 +253,6 @@ map.on('load', () => {
           toggleVisibility(box.id, allUnchecked || box.checked)
           toggleVisibility(box.id + '_text', (allUnchecked && showNames.checked) || (box.checked && showNames.checked))
         })
-
-        // if(allUnchecked) {
-        //   boxes.map((box) => {
-        //     toggleVisibility(box.id, true)
-        //     toggleVisibility(box.id + '_text', showNames.checked && true)
-        //   });
-        //   // If only one box is checked we got there from total visibility
-        // } else {
-        //   boxes.map((box) => {
-        //     toggleVisibility(box.id, box.checked)
-        //     toggleVisibility(box.id + '_text', showNames.checked && box.checked)
-        //   })
-        // }
-
       });
 
       map.on('click', layerID, HandlePopups);
@@ -274,17 +265,6 @@ map.on('load', () => {
         map.getCanvas().style.cursor = '';
       });
     });
-
-  // const mapList = document.getElementById("map-objects");
-  // digs_.map(function(dig) {
-  //   dig = dig.properties;
-  //   const row = document.createElement('li');
-  //   const a = document.createElement('a');
-  //   a.href = 'dig/' + dig.id;
-  //   a.innerText = dig.title;
-  //   row.append(a);
-  //   mapList.append(row);
-  // })
 
   })
   .then(() => {

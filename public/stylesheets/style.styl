@@ -220,6 +220,7 @@ h1,button
   @extends .flex-col
   align-items stretch
   border-radius 25px
+  width 12vw
 
 .popup-img-wrapper
   @extends .flex-col
@@ -232,7 +233,6 @@ h1,button
   // background-size 100% 100%
   // background-repeat no-repeat
   // background-position center
-  width 12vw
   height 15vh
   border-top-left-radius 10px
   border-top-right-radius 10px
@@ -279,6 +279,9 @@ h1,button
   height 10px
   margin-right 5px
   width 10px
+
+.control-filter
+  color white!important
 
 .control-names, .control-filter
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif
@@ -340,6 +343,17 @@ background-color: rgba(#ffffff, 0.8);
 
 // ============ DIG DETAIL ============ //
 
+#mapcontainer
+  min-height 35vh
+  max-height 100%
+
+.carousel
+  .carousel-control
+    text-shadow none!important
+    background-color none!important
+      .left, .right
+        background-image none!important
+
 .samantekt
   div
     ul
@@ -352,7 +366,7 @@ background-color: rgba(#ffffff, 0.8);
           flex 2
 
 .sumpics
-  height 70vh
+  // height 70vh
   h1
     margin-bottom 20px!important
 
@@ -362,16 +376,21 @@ background-color: rgba(#ffffff, 0.8);
     font-size 1.75rem
 
 .carousel-inner
+  // height 40vh
   img
     // width 100%
+    height 30vh!important
     margin 0 auto
     max-height 100%
     object-fit cover
 
 .img-disp
-  background-color rgba(126, 126, 126, 0.35)
-  color white
-  text-shadow -1px -1px #5d5d5d
+  // background-color rgba(126, 126, 126, 0.6)
+  position relative
+  color black
+  bottom 0
+  width 100%
+  // text-shadow 2px 2px 0 #ffe, 4px 4px 0 #ffe;
   font-weight 500
 
 // ============ FORM ============ //
