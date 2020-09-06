@@ -44,7 +44,7 @@ block content
         div(data-ride="carousel")#myCarousel.carousel.slide
           div.carousel-inner
             each desc, i in data.image_descriptions
-              - var url = '../../images/digs/' + data.image_url + "_" + (i + 1) + '.jpg';
+              - var url = '../../images/digs/' + data.image_url + "_" + (i + 1) + '.JPG';
               if data.image_sources[i].length
                 - var sorcy = data.image_sources[i].split("**");
                 div(class=i==0 ? "item active" : "item")
