@@ -1,0 +1,59 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet', href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Montserrat')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    //- Navbar
+    div.w3-top
+      div.w3-bar.w3-white.w3-card.w3-right-align.w3-large.navbary.w3-padding-small
+          a.w3-bar-item.w3-button.w3-hide-medium.w3-hide-large.w3-right.w3-padding-large.w3-hover-white.w3-large.w3-teal
+            i.fa.fa-bars
+          a(href='/').w3-bar-item.w3-button.w3-padding-large.navbary-left
+            | uppgroftur.is
+          a(href='/digs/map').w3-bar-item.w3-button.w3-hide-small.w3-padding-large.w3-hover-white
+            | Kort
+            a(href='/digs/yfirlit').w3-bar-item.w3-button.w3-hide-small.w3-padding-large.w3-hover-white
+              | Yfirlit
+            //- div.w3-dropdown-content.w3-bar-block.w3-card-4
+            //-   each dig in data.digs
+            //-     a(href=dig.url).w3-bar-item.w3-button
+            //-       | #{dig.title}
+          a(href='/digs/about').w3-bar-item.w3-button.w3-hide-small.w3-padding-large.w3-hover-white
+            | Um verkefnið
+          a(href='/digs/dig/create').w3-bar-item.w3-button.w3-hide-small.w3-padding-large.w3-hover-white
+            | Bæta inn digz
+      //- Navbar on small screens
+      div#navDemo.w3-bar-block.w3-white.w3-hide.w3-hide-large.w3-hide-medium.w3-large
+            a(href='/digs/map').w3-bar-item.w3-button.w3-padding-large
+              | Kort
+            a(href='/digs/yfirlit').w3-bar-item.w3-button.w3-padding-large
+              | Yfirlit
+            a(href='/digs/about').w3-bar-item.w3-button.w3-padding-large
+              | Um verkefnið  
+    //- Content
+    block content
+    
+  //- Footer
+  footer.w3-container.w3-padding-64.w3-center.w3-opacity.w3-light-gray
+    div.w3-xlarge.w3-padding-32
+        i.fa.fa-facebook-official.w3-hover-opacity
+    p Umsjónarmaður síðu: Una Helga Jónsdóttir
+    p Hafa samband: unahelga(hjá)gmail.com
+    p
+      | Powered by 
+      a(href = 'https://www.w3schools.com/w3css/default.asp', target = '_blank') w3.css
+    p
+      | Icons made by
+      a(href= 'https://www.flaticon.com/authors/smashicons', target = '_blank') www.flaticon.com
+      

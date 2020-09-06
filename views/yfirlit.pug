@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  div(style = 'padding: 64px 16px;').w3-container.w3-teal.w3-center.yfirlit
+    //- img(src='images/hi_logo_is.png', width='300', style = 'padding-bottom: 45px')
+    h1.w3-margin-w3-jumbo
+      | Fornleifauppgreftrir eftrir sýslum
+  //- Description
+  div.w3-row-padding.w3-padding-64.w3-container
+    h2.w3-margin-w3-jumbo Allir uppgreftrir
+    ul.w3-ul
+      each county in data
+        h3
+          | #{county[0].county}
+        each dig in county
+          li(style='cursor:pointer; display: flex;').w3-hover-shadow
+            //- i(style = 'width: 85px;').fa.fa-carrot.w3-bar-item.w3-circle
+            img(src='/images/dig_icon.png', style = 'width: 85px;').w3-bar-item.w3-circle
+            div.w3-bar-item
+              span.w3-large
+                a(href=dig.url) #{dig.title}
+        else
+          li Enginn uppgröftur fannst :(
+
+      else
+        li Engar sýslur fundust :(

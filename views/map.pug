@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  div(style = 'padding: 64px 16px;').w3-container.w3-light-grey.w3-center
+    h1.w3-margin-w3-jumbo
+      | Yfirlit fornleifauppgraftra á gagnvirku korti
+  div#map.w3-row-padding.w3-light-grey.w3-padding-32.w3-container
+    div#mapcontainer(style = 'height: 70vh; width: 75vw; margin: 0 auto;')
+      nav#control-names.control-names
+        input(type = "checkbox", id = "show-names", checked = false)
+        label(for = "show-names", style="margin-left: 5px;") Sýna nöfn
+      nav#control-filter.control-filter
+        h5 Sía eftir minjum
+      div(style="display: block;").legend
+        h4 Uppgraftartegund
+        div
+          span(style="background-color: #a2e67d;")
+          | Fullnaðaruppgröftur
+        div
+          span(style="background-color: #fff509;")
+          | Minniháttar uppgröftur
+    div#map-objects.map-objects
+      h4 Staðir á kortinu
+      ul.map-list
+    //- div#menu
+    //-   input(id = "streets-v11", type = "radio", name = "rtoggle", value = "streets", checked = "checked")
+    //-   label(for = "streets-v11") Götukort
+    //-   input(id = "light-v10", type = "radio", name = "rtoggle", value = "light")
+    //-   label(for = "light-v10") Ljóst kort
+    //-   input(id = "dark-v10", type = "radio", name = "rtoggle", value = "dark")
+    //-   label(for = "dark-v10") Dökkt kort
+    //-   input(id = "outdoors-v11", type = "radio", name = "rtoggle", value = "outdoors")
+    //-   label(for = "outdoors-v11") Loftkort
+    //-   input(id = "satellite-v9", type = "radio", name = "rtoggle", value = "satellite")
+    //-   label(for = "satellite-v9") Loftmynd
+      
+  script(src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js')
+  script(src='/javascripts/main.js')    

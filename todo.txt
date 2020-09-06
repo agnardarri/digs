@@ -1,0 +1,25 @@
+
+[KORTASÍÐA]
+
+- inní popup-glugga
+  Xfyrsta mynd efst
+  uppgraftarár
+  Xtegund
+  Xtags
+  Xstaða (lokið ólokið)
+  "mynd vantar" mynd
+
+- á kortinu
+  Xlegend fyrir punkta
+  filtera eftir tags
+  nöfn on/off
+  hægt velja layer
+  Xbjartari litir á hringjum
+
+
+YFIRLIT
+  grænan eða gulan punkt í stað icons
+  og legend fyrir það
+
+DIG DETAIL
+tags ("Minjategundir") í yfirlit

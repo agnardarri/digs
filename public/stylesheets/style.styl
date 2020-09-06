@@ -1,0 +1,298 @@
+body,h1,h2,h3,h4,h5,h6
+  font-family "Lato", sans-serif
+
+h1,button
+  font-family "Montserrat", sans-serif
+
+.fa-anchor,.fa-coffee
+  font-size 200px
+
+.w3-opaque
+  color black
+  background none
+  a
+    opacity 100%
+
+.flex-col
+  display flex!important
+  flex-direction column
+
+.flex-row
+  display flex!important
+  flex-direction row
+
+
+.navbary
+  display flex
+  justify-content flex-end
+  // box-shadow none
+  .navbary-left
+    margin-right auto
+    font-weight 700
+    font-size 2.5rem
+
+.frontpage
+  @extends .flex-col
+  justify-content flex-end
+  background-image url('../images/frontpage.jpg')
+  background-repeat no-repeat
+  background-size cover
+  background-position center center
+  height 80vh
+  h1
+    width 40%
+    text-align left
+    margin-left 5vh
+    font-weight 700
+    line-height 1.5
+
+.yfirlit
+  @extends .flex-col
+  justify-content flex-end
+  background-image url('../images/yfirlit.jpg')
+  background-repeat no-repeat
+  background-size cover
+  background-position center center
+  height 40vh
+
+.desc-button
+  padding 2rem
+  margin-left 5vh
+  margin-top 10px
+  max-width 10vw
+  // font-weight 600
+  font-size 1.75rem
+
+.desc-button-blue
+  @extends .desc-button
+  background-color #253551!important
+  color white!important
+  margin-left 0
+  font-weight 600
+
+.frontpage-desc
+  justify-content space-around
+  align-items baseline
+  // h3, h4
+  //   max-width 40vh
+
+.desc-container
+  @extends .flex-row
+  justify-content space-around
+  align-items center
+
+.map-img-container
+  background-image url('../images/europe-iceland-map.jpg')
+  background-size cover
+  background-repeat no-repeat
+  background-position center
+
+.quote
+  @extends .flex-col
+  background-image url('../images/DSC05226.jpg')
+  background-size cover
+  background-repeat no-repeat
+  background-position center
+  height 50vh
+  justify-content center
+  align-items center
+  font-weight 700!important
+  h1
+    width 50vw
+
+.marker
+  // background-image url('../images/dig_bones_icon.png')
+  // background-size cover
+  border-radius 50%
+  cursor pointer
+  height 20px
+  width 20px
+
+.marker_type1
+  background green
+  opacity 50%
+
+.marker_type2
+  background blue 50%
+
+// POPUP STUFF ============
+.mapboxgl-popup
+  max-width 320px!important
+.mapboxgl-popup-content
+  padding 0!important
+  // border 3px solid rgba(5, 5, 5, .05)
+  border-radius 10px
+  box-shadow none
+
+.popup-wrapper
+  @extends .flex-col
+  align-items stretch
+  border-radius 25px
+  // opacity 75%
+
+.popup-img-wrapper
+  @extends .flex-col
+  justify-content flex-end
+  align-items flex-start
+  h3,h4
+    margin-left 1vw
+  // background-image url('../images/popup_default.jpg')
+  background-size 100% 100%
+  background-repeat no-repeat
+  background-position center
+  width 12vw
+  height 15vh
+  border-top-left-radius 10px
+  border-top-right-radius 10px
+  // flex-basis 50%
+  // flex 1 1 50%
+  // height 10
+
+.popup-desc-wrapper
+  @extends .flex-col
+  align-items stretch
+  flex 1 1 50%
+  padding 10px 10px 15px
+
+.poplink
+  border-top 1px solid rgba(0, 0, 0, 25%)
+  padding-top 8px
+  margin-bottom -10px
+  font-style italic
+  text-align center
+
+.popup-attrs
+  dl
+    margin-bottom 0!important
+  dt
+    text-transform uppercase
+    color grey
+  dd
+    margin-bottom 3px!important
+
+.legend
+  background-color rgba(#ffffff, 0.75)
+  border-radius 3px
+  box-shadow 0 1px 2px rgba(0, 0, 0, 0.1)
+  font 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif
+  padding 10px
+  position absolute
+  right 10px
+  bottom 30px
+  z-index: 1
+
+.legend h4
+  margin 0 0 10px
+
+.legend div span
+  border-radius 50%
+  // border 1px solid black
+  display inline-block
+  height 10px
+  margin-right 5px
+  width 10px
+
+
+
+
+.control-names, .control-filter
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif
+  font-weight: 600
+  position: absolute
+  top: 10px
+  z-index: 1
+  border-radius: 3px
+  width: 120px
+  color: black
+
+.control-names
+  left: 10px
+
+.control-filter
+  right: 10px
+
+
+.control-names, .control-filter input[type='checkbox']:first-child + label {
+  border-radius: 3px 3px 0 0;
+}
+
+.control-names, .control-filter label:last-child {
+  border-radius: 0 0 3px 3px;
+  border: none;
+}
+
+.control-names, .control-filter input[type='checkbox'] {
+  display: none;
+}
+
+.control-names, .control-filter input[type='checkbox'] + label {
+  // background-color: rgba(#777777, 0.49);
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.control-names, .control-filter input[type='checkbox'] + label {
+  background-color: rgba(#ff8a70, 0.8);
+  text-transform: capitalize;
+}
+
+.control-names, .control-filter input[type='checkbox'] + label:hover,
+.control-names, .control-filter input[type='checkbox']:checked + label {
+background-color: rgba(#ffffff, 0.8);
+}
+
+.control-names, .control-filter input[type='checkbox']:checked + label:before {
+  content: '✔';
+  margin-right: 5px;
+}
+
+
+// dig_detail.pug
+.samantekt
+  div
+    ul
+      li.w3-bar
+        display flex!important
+        width 100%
+        div.w3-large
+          flex 2
+        div.list-val
+          flex 2
+
+.sumpics
+  height 70vh
+  h1
+    margin-bottom 20px!important
+
+.summary-field
+  p
+    width 90%
+    font-size 1.75rem
+
+.carousel-inner
+  img
+    // width 100%
+    margin 0 auto
+    max-height 100%
+    object-fit cover
+
+.img-disp
+  background-color rgba(126, 126, 126, 0.35)
+  color white
+  text-shadow -1px -1px #5d5d5d
+  font-weight 500
+
+// div.w3-bar-item
+//   width 75%!important
+//   div.w3-large
+//     width 40%!important
+
+// dig_form.pug
+.form-style
+  display flex
+  justify-content stretch
+  padding-top 2rem
+  .form-group
+    width 50%

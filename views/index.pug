@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  //- Frontpage
+  div(style = 'padding: 64px 16px;').w3-container.w3-teal.w3-center.frontpage
+    //- img(src='images/hi_logo_is.png', width='300', style = 'padding-bottom: 45px')
+    h1.w3-margin-w3-jumbo
+      | Á þessari síðu má sjá yfirlit og upplýsingar um fornleifauppgreftri á Íslandi
+    a(href = '/digs/map').w3-btn.w3-white.w3-border.desc-button
+      | Skoða kort
+  //- Description
+  div.w3-container.w3-light-grey.w3-padding-32.frontpage-desc.flex-row
+    h2(style = 'width:' + data.elementWidth + ';')
+      | Þessi síða er unnin sem lokaverkefni í meistaranámi í fornleifafræði við Háskóla Íslands
+    h5(style = 'width:' + data.elementWidth + '; font-weight: 100; font-size: 2.25rem')
+      | Hugmyndin að verkefninu kviknaði vegna áhuga á miðlun á fornleifafræði fyrir almenning, með skemmtilegri og dýnamískri framsetningu. 
+  //- Map section
+  div.w3-container.w3-padding-32.desc-container
+    div(style = 'width: ' + data.elementWidth + ';').flex-col
+      h2
+        | Yfirlit fornleifauppgraftra á gagnvirku korti
+      p
+        | Smelltu hér til að skoða hvar uppgreftrir hafa verið framkvæmdir
+      a(href = '/digs/map').w3-btn.w3-white.w3-border.desc-button-blue
+        | Skoða kort
+    img(style = 'width: ' + data.elementWidth + ";", src = '../images/europe-iceland-map.jpg')
+  //- Yfirlit section
+  div.w3-container.w3-padding-32.w3-light-grey.desc-container
+    img(style = 'width: ' + data.elementWidth + '; max-width: 80%;', src = '../images/uppgroftur_stod.jpg')
+    div(style = 'width: ' + data.elementWidth + ';').flex-col
+      h2
+        | Yfirlit fornleifauppgraftra í textaformi
+      p(style = 'max-width: 50%;')
+        | Smelltu hér til að skoða yfirlit yfir uppgreftri í textaformi með myndum. Hér getur þú einnig nálgast heimildir um staði sem þú vilt frekari upplýsingar um
+      a(href = '/digs/yfirlit').w3-btn.w3-white.w3-border.desc-button-blue
+        | Skoða yfirlit
+  //- Quote
+  div.quote.w3-container.w3-black.w3-padding-64
+    h1.w3-margin.w3-xlarge
+      | Hefurðu einhverja hugmynd um hvað fornleifafræði er COOL? Finnst þér ekki að upplýsingar um hana ættu að vera aðgengilegar almenningi?
+    h3.w3-margin
+      | - Michael Scott
+    h3(style = "margin-left: 15px;").w3-margin
+      | - Una Helga
+  

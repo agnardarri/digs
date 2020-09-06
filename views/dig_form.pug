@@ -1,0 +1,161 @@
+extends layout
+
+block content
+  div.w3-row-padding.w3-padding-64.w3-container
+    h1 #{title}
+
+    div.w3-padding-16.w3-container
+      form(method='POST' action='').w3-twothird.w3-padding-32
+        div.form-group
+          label(for='title') Heiti á uppgreftri:
+          input#title.form-control(type='text', placeholder='Unudalur í Helgufelli, Jónsdóttursýslu' name='title' value=(undefined===dig ? '' : dig.title))
+        div.form-group
+          label(for='people') Uppgrafaraðilar:
+          input#people.form-control(type='text', placeholder='Una Jóns, Leia, Fornleifastofnun' name='people' value=(undefined===dig ? '' : dig.people))
+        div.form-group
+          label(for='county') Sýsla:
+          input#county.form-control(type='text', placeholder='Unuleiusýsla' name='county' value=(undefined===dig ? '' : dig.county))
+        div.form-group
+          label(for='year') Uppgraftarár:
+          input#year.form-control(type='text', placeholder='1987 (Una), 1986 (Darri)' name='year' value=(undefined===dig ? '' : dig.year))
+        div.form-group
+          label(for='category') Grænt (1) eða gult (2) dæmið:
+          input#category.form-control(type='text', placeholder='1 = Fullnaðaruppgr(grænt), 2 = Ólokið(gult)' name='category' value=(undefined===dig ? '' : dig.category))
+        div.form-group
+          label(for='type') Uppgraftartýpa:
+          input#type.form-control(type='text', placeholder='Ólokið, á eftir að þrífa upp poop' name='type' value=(undefined===dig ? '' : dig.type))
+        div.form-group
+          label(for='finished') Klárað?:
+          input.checkbox-input(type='checkbox', name='finished', value=(undefined===dig ? false : dig.finished), checked=false)
+        div.form-group
+          label(for='observable') Vettvangsskoðanalegt?
+          input#observable.form-control(type='text', placeholder='Ólokið, á eftir að þrífa upp poop' name='observable' value=(undefined===dig ? '' : dig.observable))
+        div.form-group
+          label(for='gps') GPS-hnit:
+          input#gps.form-control(type='text', placeholder='64.4322, -21.5432' name='gps' value=(undefined===dig ? '' : dig.gps))
+        div.form-group
+          label(for='gps_desc') GPS-lýsing:
+          input#gps_desc.form-control(type='text', placeholder='' name='gps_desc' value=(undefined===dig ? '' : dig.gps_desc))
+        div.form-group
+          label(for='tags') Tagz:
+          input#tags.form-control(type='text', placeholder='sverð; rass; grafir' name='tags' value=(undefined===dig ? '' : dig.tags))
+        div.form-group
+          label(for='summary') Umfjöllun:
+          textarea#summary.form-control(type='textarea', placeholder='Bitchez B diggin', name='summary' rows='8') #{undefined===dig ? '' : dig.summary}
+        div.form-group
+          h2 Uppgraftarheimildir
+          div.form-group.form-style
+            div.form-group
+              label(for='sources_1') Heimild 1:
+              textarea#sources_1.form-control(type='textarea', placeholder='Texti textason. **Skáletraður text**. Meiri texti.', name='sources_1' rows='2') #{undefined===dig ? '' : dig.sources_1}
+            div.form-group
+              label(for='sources_link_1') Hlekkur 1:
+              textarea#sources_link_1.form-control(type='textarea', placeholder='Linky dinky', name='sources_link_1' rows='1') #{undefined===dig ? '' : dig.sources_link_1}
+          
+          div.form-group.form-style
+            div.form-group
+              label(for='sources_2') Heimild 2:
+              textarea#sources_2.form-control(type='textarea', placeholder='Texti textason. **Skáletraður text**. Meiri texti.', name='sources_2' rows='2') #{undefined===dig ? '' : dig.sources_2}
+            div.form-group
+              label(for='sources_link_2') Hlekkur 2:
+              textarea#sources_link_2.form-control(type='textarea', placeholder='Linky dinky', name='sources_link_2' rows='1') #{undefined===dig ? '' : dig.sources_link_2}
+              
+          div.form-group.form-style
+            div.form-group
+              label(for='sources_3') Heimild 3:
+              textarea#sources_3.form-control(type='textarea', placeholder='Texti textason. **Skáletraður text**. Meiri texti.', name='sources_3' rows='2') #{undefined===dig ? '' : dig.sources_3}
+            div.form-group
+              label(for='sources_link_3') Hlekkur 3:
+              textarea#sources_link_3.form-control(type='textarea', placeholder='Linky dinky', name='sources_link_3' rows='1') #{undefined===dig ? '' : dig.sources_link_3}
+              
+          div.form-group.form-style
+            div.form-group
+              label(for='sources_4') Heimild 4:
+              textarea#sources_4.form-control(type='textarea', placeholder='Texti textason. **Skáletraður text**. Meiri texti.', name='sources_4' rows='2') #{undefined===dig ? '' : dig.sources_4}
+            div.form-group
+              label(for='sources_link_4') Hlekkur 4:
+              textarea#sources_link_4.form-control(type='textarea', placeholder='Linky dinky', name='sources_link_4' rows='1') #{undefined===dig ? '' : dig.sources_link_4}
+            
+        div.form-group
+          h2 Myndir
+          label(for='image_url') Heiti á myndum
+          textarea#image_url.form-control(type='textarea', placeholder='mynd_1.jpg', name='image_url' rows='1') #{undefined===dig ? '' : dig.image_url}
+          div.form-group.form-style
+            div.form-group
+              label(for='image_desc_1') Lýsing 1
+              textarea#image_desc_1.form-control(type='textarea', placeholder='Mynd 1 er blabla', name='image_desc_1' rows='3') #{undefined===dig ? '' : dig.image_desc_1}
+            div.form-group
+              label(for='image_source_1') Heimildir 1
+              textarea#image_source_1.form-control(type='textarea', placeholder='Heimild 1, gummi og nonni', name='image_source_1' rows='3') #{undefined===dig ? '' : dig.image_source_1}
+          
+          div.form-group.form-style
+            div.form-group
+              label(for='image_desc_2') Lýsing 2
+              textarea#image_desc_2.form-control(type='textarea', placeholder='Mynd 2 er blabla', name='image_desc_2' rows='3') #{undefined===dig ? '' : dig.image_desc_2}
+            div.form-group
+              label(for='image_source_2') Heimildir 2
+              textarea#image_source_2.form-control(type='textarea', placeholder='Heimild 2, gummi og nonni', name='image_source_2' rows='3') #{undefined===dig ? '' : dig.image_source_2}
+          
+          div.form-group.form-style
+            div.form-group
+              label(for='image_desc_3') Lýsing 3
+              textarea#image_desc_3.form-control(type='textarea', placeholder='Mynd 3 er blabla', name='image_desc_3' rows='3') #{undefined===dig ? '' : dig.image_desc_3}
+            div.form-group
+              label(for='image_source_3') Heimildir 3
+              textarea#image_source_3.form-control(type='textarea', placeholder='Heimild 3, gummi og nonni', name='image_source_3' rows='3') #{undefined===dig ? '' : dig.image_source_3}
+          
+          div.form-group.form-style
+            div.form-group
+              label(for='image_desc_4') Lýsing 4
+              textarea#image_desc_4.form-control(type='textarea', placeholder='Mynd 4 er blabla', name='image_desc_4' rows='3') #{undefined===dig ? '' : dig.image_desc_4}
+            div.form-group
+              label(for='image_source_4') Heimildir 4
+              textarea#image_source_4.form-control(type='textarea', placeholder='Heimild 4, gummi og nonni', name='image_source_4' rows='3') #{undefined===dig ? '' : dig.image_source_4}
+              
+          div.form-group.form-style
+            div.form-group
+              label(for='image_desc_5') Lýsing 5
+              textarea#image_desc_5.form-control(type='textarea', placeholder='Mynd 5 er blabla', name='image_desc_5' rows='3') #{undefined===dig ? '' : dig.image_desc_5}
+            div.form-group
+              label(for='image_source_5') Heimildir 5
+              textarea#image_source_5.form-control(type='textarea', placeholder='Heimild 5, gummi og nonni', name='image_source_5' rows='3') #{undefined===dig ? '' : dig.image_source_5}
+          
+          div.form-group.form-style
+            div.form-group
+              label(for='image_desc_6') Lýsing 6
+              textarea#image_desc_6.form-control(type='textarea', placeholder='Mynd 6 er blabla', name='image_desc_6' rows='3') #{undefined===dig ? '' : dig.image_desc_6}
+            div.form-group
+              label(for='image_source_6') Heimildir 6
+              textarea#image_source_6.form-control(type='textarea', placeholder='Heimild 6, gummi og nonni', name='image_source_6' rows='3') #{undefined===dig ? '' : dig.image_source_6}
+              
+          div.form-group.form-style
+            div.form-group
+              label(for='image_desc_7') Lýsing 7
+              textarea#image_desc_7.form-control(type='textarea', placeholder='Mynd 7 er blabla', name='image_desc_7' rows='3') #{undefined===dig ? '' : dig.image_desc_7}
+            div.form-group
+              label(for='image_source_7') Heimildir 7
+              textarea#image_source_7.form-control(type='textarea', placeholder='Heimild 7, gummi og nonni', name='image_source_7' rows='3') #{undefined===dig ? '' : dig.image_source_7}
+          
+          div.form-group.form-style
+            div.form-group
+              label(for='image_desc_8') Lýsing 8
+              textarea#image_desc_8.form-control(type='textarea', placeholder='Mynd 8 er blabla', name='image_desc_8' rows='3') #{undefined===dig ? '' : dig.image_desc_8}
+            div.form-group
+              label(for='image_source_8') Heimildir 8
+              textarea#image_source_8.form-control(type='textarea', placeholder='Heimild 8, gummi og nonni', name='image_source_8' rows='3') #{undefined===dig ? '' : dig.image_source_8}
+
+            
+        //- div.form-group
+        //-   label(for='image_url') Filename:
+        //-   textarea#image_url.form-control(type='textarea', placeholder='mynd_1.jpg', name='image_url' rows='1') #{undefined===dig ? '' : dig.image_url}
+        //-   label(for='image_desc') Lýsing:
+        //-   textarea#image_desc.form-control(type='textarea', placeholder='Mynd 1 er blabla; Mynd 2 vóvóvó; Mynd 3 sko, sjitt', name='image_desc' rows='3') #{undefined===dig ? '' : dig.image_desc}
+        //-   label(for='image_source') Heimildir:
+        //-   textarea#image_source.form-control(type='textarea', placeholder='Heimild 1, gummi og nonni; Heimild 2, 1995, rabbarabari; Lololo!!!', name='image_source' rows='3') #{undefined===dig ? '' : dig.image_source}
+        //- Button
+        button.btn.btn-primary(type='submit') Bomba í grunn
+  
+      if errors 
+       ul
+        for error in errors
+         li!= error.msg

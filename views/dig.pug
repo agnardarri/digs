@@ -1,0 +1,148 @@
+extends layout
+
+block content
+  //- Header
+  div(style = 'padding: 120px 16px; padding-bottom: 24px;').w3-container.w3-white.w3-left
+    h2(style="color: black;").w3-margin-w3-jumbo
+      | !{data.title}
+  div.w3-row-padding.w3-padding-64.w3-container.samantekt
+    div.w3-half
+      ul.w3-ul.flex-col
+        li.w3-bar
+          div(style='font-weight:bold').w3-large Uppgraftarár:
+          div.list-val !{data.year}
+        li.w3-bar
+          div(style='font-weight:bold').w3-large Uppgraftaraðilar:
+          div.list-val !{data.people}
+        li.w3-bar
+          div(style='font-weight:bold').w3-large Tegund uppgraftar:
+          div.list-val !{data.type}
+        li.w3-bar
+          div(style='font-weight:bold').w3-large Staða uppgraftar:
+          div.list-val !{data.finished == true ? "Lokið" : "Ólokið"}
+        li.w3-bar
+          div(style='font-weight:bold').w3-large Hægt að skoða á vettvangi:
+          div.list-val !{data.observable}
+        li.w3-bar
+          div(style='font-weight:bold').w3-large GPS-hnit:
+          div.list-val !{data.gps}
+    div.w3-half
+      div(style = 'height: 30vh;')#mapcontainer.w3-rest.w3-row-padding-64.w3-margin.w3-round-large
+  div.w3-row-padding.w3-padding-64.w3-container.sumpics 
+    div.w3-half.w3-row-padding
+      h1.w3-margin-w3-jumbo Umfjöllun
+      div.summary-field
+        - var summsy = data.summary.replace(/#/g, "</br></br>");
+        p !{summsy}
+    div.w3-half.w3-row-padding
+      h1.w3-margin-w3-jumbo Myndir
+      if data.image_descriptions[0] == ''
+        h2 Engar myndir til
+      else if data.image_descriptions[0] != ''
+        div(data-ride="carousel")#myCarousel.carousel.slide
+          //- ol.carousel-indicators
+          //-   each desc, i in data.image_descriptions
+          //-     if desc != ''
+          //-       li(data-target="#myCarousel", data-slide-to=i, class=i==0 ? "active" : "")
+          div.carousel-inner
+            each desc, i in data.image_descriptions
+              - var url = '../../images/digs/' + data.image_url + "_" + (i + 1) + '.jpg';
+              if data.image_sources[i].length
+                - var sorcy = data.image_sources[i].split("**");
+                div(class=i==0 ? "item active" : "item")
+                  img(src=url, alt=desc)
+                  div.w3-display-bottomleft.w3-container.w3-padding-16.img-disp
+                    p(style="font-size: 1.65rem;")=desc
+                    p(style="font-size: 1.15rem;")
+                      | #{sorcy[0]}
+                      i
+                        | #{sorcy[1]}
+                      | #{sorcy[2]}
+          a(href="#myCarousel", data-slide = "prev").left.carousel-control
+            span.glyphicon.glyphicon-chevron-left
+            span.sr-only Previous
+          a(href="#myCarousel", data-slide = "next").right.carousel-control
+            span.glyphicon.glyphicon-chevron-right
+            span.sr-only Next
+          //- div.carousel-inner
+          //-   each desc, i in data.image_descriptions
+          //-     if desc != ''
+          //-       div(class=i==0 ? "item active" : "item")
+          //-         p= desc
+  div.w3-row-padding.w3-padding-64.w3-container
+      div.w3-half.flex-col
+        h1.w3-margin-w3-jumbo Nánari heimildir:
+        each source, i in data.sources
+          if source != ''
+            - sorcy = source.split("**");
+            a(href=data.source_links[i], style = "margin-top: 10px;", target="_blank")
+              | #{sorcy[0]}
+              i
+                | #{sorcy[1]}
+              | #{sorcy[2]}
+            
+          
+  div(style='display:none')#gpscontainer
+    h1 !{data.gps[0]}
+    h2 !{data.gps[1]}
+  script(src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js')
+  script(src='../../javascripts/dig_detail.js')            
+
+      
+  //- div.w3-row-padding.w3-padding-64.w3-container
+  //-   h2.w3-margin-w3-jumbo Samantekt
+  //-   ul.w3-ul.w3-half
+  //-     li.w3-bar
+  //-       img(src='../../images/archaeologist_icon.png', style = 'width: 85px;').w3-bar-item.w3-circle
+  //-       div.w3-bar-item.flex-col
+  //-         span(style='font-weight:bold').w3-large Heiti uppgraftar
+  //-         span !{data.title}
+  //-     li.w3-bar
+  //-       img(src='../../images/archaeologist_icon.png', style = 'width: 85px;').w3-bar-item.w3-circle
+  //-       div.w3-bar-item.flex-col
+  //-         span(style='font-weight:bold').w3-large Uppgraftarár
+  //-         span !{data.year}
+  //-     li.w3-bar
+  //-       img(src='../../images/archaeologist_icon.png', style = 'width: 85px;').w3-bar-item.w3-circle
+  //-       div.w3-bar-item.flex-col
+  //-         span(style='font-weight:bold').w3-large Aðstandendur
+  //-         span !{data.people}
+  //-   ul.w3-ul.w3-half
+  //-     li.w3-bar
+  //-       img(src='../../images/archaeologist_icon.png', style = 'width: 85px;').w3-bar-item.w3-circle
+  //-       div.w3-bar-item.flex-col
+  //-         span(style='font-weight:bold').w3-large Tegund uppgraftar
+  //-         span !{data.type}
+  //-     li.w3-bar
+  //-       img(src='../../images/archaeologist_icon.png', style = 'width: 85px;').w3-bar-item.w3-circle
+  //-       div.w3-bar-item.flex-col
+  //-         span(style='font-weight:bold').w3-large Staða uppgraftar
+  //-         if data.finished == true
+  //-           span Óvirkur
+  //-         else 
+  //-           span Virkur
+  //-     li.w3-bar
+  //-       img(src='../../images/archaeologist_icon.png', style = 'width: 85px;').w3-bar-item.w3-circle
+  //-       div.w3-bar-item.flex-col
+  //-         span(style='font-weight:bold').w3-large Vettvangsskoðun
+  //-         if data.observable == true
+  //-           span Hægt að skoða
+  //-         else
+  //-           span Ekki hægt að skoða
+        
+  //- div
+  //-   if data.image_descriptions[0] == ''
+  //-     h2 Engar myndir til
+  //-   else
+  //-     each desc, i in data.image_descriptions
+  //-       if desc != ''
+  //-         - var url = '../../images/digs/' + data.image_url + (i + 1) + '.jpg';
+  //-         img(src=url)
+  //-         p=desc
+  //-         if data.image_sources[i].length
+  //-           - var sorcy = data.image_sources[i].split("**");
+  //-           p
+  //-             | #{sorcy[0]}
+  //-             i
+  //-               | #{sorcy[1]}
+  //-             | #{sorcy[2]}
