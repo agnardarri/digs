@@ -1,8 +1,15 @@
+// ============ MAIN ============ //
+
 body,h1,h2,h3,h4,h5,h6
   font-family "Lato", sans-serif
 
 h1,button
   font-family "Montserrat", sans-serif
+
+.center-image
+  background-size cover
+  background-repeat no-repeat
+  background-position center
 
 .fa-anchor,.fa-coffee
   font-size 200px
@@ -21,7 +28,9 @@ h1,button
   display flex!important
   flex-direction row
 
-
+// ============ HEADER ============ //
+.w3-top
+  z-index 100
 .navbary
   display flex
   justify-content flex-end
@@ -31,13 +40,13 @@ h1,button
     font-weight 700
     font-size 2.5rem
 
+// ============ FRONTPAGE ============ //
+
 .frontpage
   @extends .flex-col
-  justify-content flex-end
+  @extends .center-image
   background-image url('../images/frontpage.jpg')
-  background-repeat no-repeat
-  background-size cover
-  background-position center center
+  justify-content flex-end
   height 80vh
   h1
     width 40%
@@ -45,15 +54,6 @@ h1,button
     margin-left 5vh
     font-weight 700
     line-height 1.5
-
-.yfirlit
-  @extends .flex-col
-  justify-content flex-end
-  background-image url('../images/yfirlit.jpg')
-  background-repeat no-repeat
-  background-size cover
-  background-position center center
-  height 40vh
 
 .desc-button
   padding 2rem
@@ -81,24 +81,117 @@ h1,button
   justify-content space-around
   align-items center
 
+.desc-icon
+  width 30%
+  height 30%
+  @extends .center-image
+  background-image url('../images/hi_logo.png')
+  background-color green
+
+
 .map-img-container
+  @extends .center-image
   background-image url('../images/europe-iceland-map.jpg')
-  background-size cover
-  background-repeat no-repeat
-  background-position center
 
 .quote
   @extends .flex-col
+  @extends .center-image
   background-image url('../images/DSC05226.jpg')
-  background-size cover
-  background-repeat no-repeat
-  background-position center
   height 50vh
   justify-content center
   align-items center
   font-weight 700!important
+  font-size 3rem
   h1
     width 50vw
+
+// ============ YFIRLIT ============ //
+
+.yfirlit
+  @extends .flex-col
+  justify-content flex-end
+  background-image url('../images/yfirlit.jpg')
+  background-repeat no-repeat
+  background-size cover
+  background-position center center
+  height 40vh
+
+
+.yfirlit-span
+  border-radius 50%
+  // border 1px solid black
+  display inline-block
+  height 10px
+  margin-right 5px
+  width 10px
+
+.legend
+  background-color rgba(#ffffff, 0.75)
+  border-radius 3px
+  box-shadow 0 1px 2px rgba(0, 0, 0, 0.1)
+  font 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif
+  padding 10px
+  position absolute
+  right 10px
+  bottom 30px
+  z-index: 1
+
+.yfirlit-legend h4
+  margin 0 0 10px
+
+.yfirlit-legend div span
+  border-radius 50%
+  // border 1px solid black
+  display inline-block
+  height 10px
+  margin-right 5px
+  width 10px
+
+.yfirlit-list
+  display flex
+  justify-content space-around
+  align-items stretch
+  ul
+    width 30%
+
+.yfirlit-icon
+  background-size cover
+  border-radius 50%
+  height 20px
+  width 20px
+  margin-right 3px
+  justify-self flex-end
+
+.yfirlit-dyrabein
+  @extends .yfirlit-icon
+  background-image url('../images/icons/dyrabein.png')
+
+.yfirlit-grafir
+  @extends .yfirlit-icon
+  background-image url('../images/icons/grafir.png')
+
+.yfirlit-gripir
+  @extends .yfirlit-icon
+  background-image url('../images/icons/gripir.png')
+
+.yfirlit-mannabein
+  @extends .yfirlit-icon
+  background-image url('../images/icons/mannabein.png')
+
+.yfirlit-mannvirki
+  @extends .yfirlit-icon
+  background-image url('../images/icons/mannvirki.png')
+
+
+
+// Dýrabein
+// gripir
+// grafir
+// mannabein
+// mannvirki
+// ekkert
+
+// ============ MAP ============ //
 
 .marker
   // background-image url('../images/dig_bones_icon.png')
@@ -120,7 +213,6 @@ h1,button
   max-width 320px!important
 .mapboxgl-popup-content
   padding 0!important
-  // border 3px solid rgba(5, 5, 5, .05)
   border-radius 10px
   box-shadow none
 
@@ -128,7 +220,6 @@ h1,button
   @extends .flex-col
   align-items stretch
   border-radius 25px
-  // opacity 75%
 
 .popup-img-wrapper
   @extends .flex-col
@@ -136,17 +227,15 @@ h1,button
   align-items flex-start
   h3,h4
     margin-left 1vw
+  @extends .center-image
   // background-image url('../images/popup_default.jpg')
-  background-size 100% 100%
-  background-repeat no-repeat
-  background-position center
+  // background-size 100% 100%
+  // background-repeat no-repeat
+  // background-position center
   width 12vw
   height 15vh
   border-top-left-radius 10px
   border-top-right-radius 10px
-  // flex-basis 50%
-  // flex 1 1 50%
-  // height 10
 
 .popup-desc-wrapper
   @extends .flex-col
@@ -186,14 +275,10 @@ h1,button
 
 .legend div span
   border-radius 50%
-  // border 1px solid black
   display inline-block
   height 10px
   margin-right 5px
   width 10px
-
-
-
 
 .control-names, .control-filter
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif
@@ -233,7 +318,7 @@ h1,button
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-.control-names, .control-filter input[type='checkbox'] + label {
+.control-filter input[type='checkbox'] + label {
   background-color: rgba(#ff8a70, 0.8);
   text-transform: capitalize;
 }
@@ -243,13 +328,18 @@ h1,button
 background-color: rgba(#ffffff, 0.8);
 }
 
+.control-names, .control-filter input[type='checkbox']:not(:checked) + label:before {
+  content: '☐';
+  margin-right: 5px;
+}
+
 .control-names, .control-filter input[type='checkbox']:checked + label:before {
   content: '✔';
   margin-right: 5px;
 }
 
+// ============ DIG DETAIL ============ //
 
-// dig_detail.pug
 .samantekt
   div
     ul
@@ -284,11 +374,7 @@ background-color: rgba(#ffffff, 0.8);
   text-shadow -1px -1px #5d5d5d
   font-weight 500
 
-// div.w3-bar-item
-//   width 75%!important
-//   div.w3-large
-//     width 40%!important
-
+// ============ FORM ============ //
 // dig_form.pug
 .form-style
   display flex

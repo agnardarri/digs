@@ -7,20 +7,43 @@ block content
       | Fornleifauppgreftrir eftrir sýslum
   //- Description
   div.w3-row-padding.w3-padding-64.w3-container
-    h2.w3-margin-w3-jumbo Allir uppgreftrir
-    ul.w3-ul
+    div.yfirlit-legend-container.flex-col(style = 'position: absolute;')
+      div.yfirlit-legend.w3-padding-32
+        h4 Uppgraftartegund
+        div
+          span(style="background-color: #a2e67d;")
+          | Fullnaðaruppgröftur
+        div
+          span(style="background-color: #fff509;")
+          | Minniháttar uppgröftur
+      div.yfirlit-icon-legend
+        h4 Minjar
+        div.flex-col
+          - var tags = ['dyrabein', 'grafir', 'gripir', 'mannabein', 'mannvirki'];
+          - var tags_display = ['Dýrabein', 'Gröf/grafir', 'Gripir', 'Mannabein', 'Mannvirki'];
+          each tag, i in tags
+            - var icon = 'yfirlit-' + tag;
+            div.flex-row
+              span(class = icon)
+              label(style = "margin-left: 3px;")=tags_display[i]
+    div.w3-container.yfirlit-list
       each county in data
-        h3
-          | #{county[0].county}
-        each dig in county
-          li(style='cursor:pointer; display: flex;').w3-hover-shadow
-            //- i(style = 'width: 85px;').fa.fa-carrot.w3-bar-item.w3-circle
-            img(src='/images/dig_icon.png', style = 'width: 85px;').w3-bar-item.w3-circle
-            div.w3-bar-item
-              span.w3-large
-                a(href=dig.url) #{dig.title}
-        else
-          li Enginn uppgröftur fannst :(
-
+        ul.w3-ul
+          h3
+            | #{county[0].county}
+          each dig in county
+            li(style='cursor:pointer; display: flex; align-items: center; justify-content: flex-start;')
+              - var bgr = dig.category == 1 ? "background-color: #a2e67d;" : "background-color: #fff509;";
+              - var icons = dig.tags.map((d) => d == 'dýrabein' ? 'dyrabein' : d == 'gröf/grafir' ? 'grafir' : d);
+              - var icon_classes = icons.map((d) => 'yfirlit-' + d) //.join(' ')
+                  
+              div.w3-bar-item(style="width: 70%;")
+                span(style=bgr).yfirlit-span
+                span.w3-large
+                  a(href=dig.url) #{dig.title}
+              each icon in icon_classes
+                span(class=icon)
+          else
+            li Enginn uppgröftur fannst :(
       else
         li Engar sýslur fundust :(

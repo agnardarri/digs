@@ -18,9 +18,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYWduYXJkYXJyaSIsImEiOiJja2N3YXU4ZXowY2JwMnRxd
 
 var map = new mapboxgl.Map({
   container: "mapcontainer",
-  style: 'mapbox://styles/mapbox/outdoors-v11',
+  style: 'mapbox://styles/mapbox/satellite-v9',
   center: icelandCenter.reverse(),
-  zoom: 6.1
+  zoom: 6.15
 });
 
 var popup = new mapboxgl.Popup({

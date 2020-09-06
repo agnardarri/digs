@@ -54,12 +54,10 @@ exports.yfirlit = async (req, res) => {
       // Pass an empty object as match condition to find all documents of this collection
     },
   }, function(err, results) {
-      results.digs.sort(function(a, b) {let textA = a.title.toUpperCase(); let textB = b.title.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
 
-      var grouped = _.groupBy(results.digs, function(dig) {
-        return dig.county;
-      });
-      // console.log(grouped);
+      var sorted = _.sortBy(results.digs, (d) => d.title.toUpperCase()),
+          sorted2 = _.sortBy(sorted, (d) => d.county.toUpperCase()),
+          grouped = _.groupBy(sorted2, (d) => d.county);
 
       res.render('yfirlit', {error: err, data: grouped});
   });

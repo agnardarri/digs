@@ -1,23 +1,31 @@
 {
-  "name": "olden-circle2",
-  "version": "0.0.0",
+  "name": "olden-circle",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.18.2"
+  },
   "private": true,
   "scripts": {
+    "build-css": "stylus public/stylesheets/style.styl -o public/stylesheets/css",
+    "watch-css": "stylus public/stylesheets/style.styl -o public/stylesheets/css -w",
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run devstart"
+    "watchstart": "npm run watch-css & nodemon ./bin/www",
   },
   "dependencies": {
     "async": "^3.2.0",
+    "compression": "^1.7.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "express-validator": "^6.6.0",
+    "helmet": "^4.1.0",
     "jquery": "^3.5.1",
     "lodash": "^4.17.20",
     "mapbox-gl": "^1.11.1",
     "mongoose": "^5.9.25",
     "morgan": "~1.9.1",
+    "nib": "^1.1.2",
     "pug": "^3.0.0",
     "shortid": "^2.2.15",
     "stylus": "0.54.5"

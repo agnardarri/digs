@@ -5,11 +5,8 @@
  */
 
 var app = require('../app');
-// var main = require('../main');
 var debug = require('debug')('olden-circle2:server');
 var http = require('http');
-
-// main();
 
 /**
  * Get port from environment and store in Express.

@@ -3,7 +3,7 @@
 
 - inní popup-glugga
   Xfyrsta mynd efst
-  uppgraftarár
+  Xuppgraftarár
   Xtegund
   Xtags
   Xstaða (lokið ólokið)
@@ -11,10 +11,10 @@
 
 - á kortinu
   Xlegend fyrir punkta
-  filtera eftir tags
-  nöfn on/off
-  hægt velja layer
+  xfiltera eftir tags
+  Xnöfn on/off
   Xbjartari litir á hringjum
+  hægt velja layer
 
 
 YFIRLIT
