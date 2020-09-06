@@ -39,7 +39,7 @@ block content
     div.w3-half.w3-row-padding
       h1.w3-margin-w3-jumbo Myndir
       if data.image_descriptions[0] == ''
-        h2 Engar myndir til
+        img(src='../../images/digs/engin_mynd.png', style="width: 40vw;")
       else if data.image_descriptions[0] != ''
         div(data-ride="carousel")#myCarousel.carousel.slide
           div.carousel-inner

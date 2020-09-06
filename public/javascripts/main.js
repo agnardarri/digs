@@ -79,7 +79,13 @@ const HandlePopups = function(e) {
 
   const capitalizeFirstLetter = (word) => word.charAt(0).toUpperCase() + word.slice(1);
 
-  var popupimg = "url('/images/digs/" + capitalizeFirstLetter(image_url) + "_1.JPG')";
+  var popupimg;
+
+  if(image_url == '') {
+    popupimg = "url('/images/digs/engin_mynd.png')";
+  } else {
+    popupimg = "url('/images/digs/" + capitalizeFirstLetter(image_url) + "_1.JPG')";
+  }
 
   popup
   .setLngLat(coordinates)
