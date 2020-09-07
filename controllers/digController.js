@@ -54,7 +54,9 @@ exports.yfirlit = async (req, res) => {
       // Pass an empty object as match condition to find all documents of this collection
     },
   }, function(err, results) {
-
+      // digs = results.digs.map((d) => {
+      //   return d.title == "Ísleifsstaðir" ? "Isleifsstaðir" : d.title
+      // });
       var sorted = _.sortBy(results.digs, (d) => d.title.toUpperCase()),
           sorted2 = _.sortBy(sorted, (d) => d.county.toUpperCase()),
           grouped = _.groupBy(sorted2, (d) => d.county);
