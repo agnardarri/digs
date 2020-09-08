@@ -142,6 +142,18 @@ h1,button
   background-position center center
   height 40vh
 
+.yfirlit-container
+  @media only screen and (max-width: 600px)
+    width 100%
+
+.yfirlit-legend-container
+  @extends .flex-col
+  position absolute
+  @media only screen and (max-width: 600px)
+    position relative
+    flex-direction row
+    justify-content space-around
+
 
 .yfirlit-span
   border-radius 50%
@@ -179,6 +191,22 @@ h1,button
   align-items stretch
   ul
     width 30%
+    li
+      @extends .flex-row
+      cursor pointer
+      align-items center
+      justify-content flex-start
+      padding-left 0
+      .w3-bar-item
+        width 70%
+  @media only screen and (max-width: 600px)
+    flex-direction column
+    ul
+      width 100%!important
+      li
+        .w3-bar-item
+          width 60%
+
 
 .yfirlit-icon
   background-size cover
@@ -246,20 +274,20 @@ h1,button
   @extends .flex-col
   align-items stretch
   border-radius 25px
-  width 12vw
+  width 200px
 
 .popup-img-wrapper
   @extends .flex-col
   justify-content flex-end
   align-items flex-start
   h3,h4
-    margin-left 1vw
+    margin-left 5px
   @extends .center-image
   // background-image url('../images/popup_default.jpg')
   // background-size 100% 100%
   // background-repeat no-repeat
   // background-position center
-  height 15vh
+  height 150px
   border-top-left-radius 10px
   border-top-right-radius 10px
 

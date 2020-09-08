@@ -6,8 +6,8 @@ block content
     h1.w3-margin-w3-jumbo
       | Fornleifauppgreftrir eftrir sýslum
   //- Description
-  div.w3-row-padding.w3-padding-64.w3-container
-    div.yfirlit-legend-container.flex-col(style = 'position: absolute;')
+  div.w3-row-padding.w3-padding-64.w3-container.yfirlit-container
+    div.yfirlit-legend-container
       div.yfirlit-legend.w3-padding-32
         h4 Uppgraftartegund
         div
@@ -32,12 +32,12 @@ block content
           h3
             | #{county[0].county}
           each dig in county
-            li(style='cursor:pointer; display: flex; align-items: center; justify-content: flex-start;')
+            li
               - var bgr = dig.category == 1 ? "background-color: #a2e67d;" : "background-color: #fff509;";
               - var icons = dig.tags.map((d) => d == 'dýrabein' ? 'dyrabein' : d == 'gröf/grafir' ? 'grafir' : d);
               - var icon_classes = icons.map((d) => 'yfirlit-' + d) //.join(' ')
                   
-              div.w3-bar-item(style="width: 70%;")
+              div.w3-bar-item
                 span(style=bgr).yfirlit-span
                 span.w3-large
                   a(href=dig.url) #{dig.title}
