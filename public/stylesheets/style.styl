@@ -40,6 +40,7 @@ h1,button
     font-weight 700
     font-size 2.5rem
 
+
 // ============ FRONTPAGE ============ //
 
 .frontpage
@@ -55,12 +56,16 @@ h1,button
     margin-left 5vh
     font-weight 700
     line-height 1.5
+    @media only screen and (max-width: 600px)
+      width auto
+      font-size 3rem
 
 .desc-button
   padding 2rem
-  margin-left 5vh
-  margin-top 10px
-  max-width 10vw
+  margin-left 20px
+  margin-top 20px
+  // max-width 10vw
+  min-width 25px
   // font-weight 600
   font-size 1.75rem
 
@@ -74,6 +79,13 @@ h1,button
 .frontpage-desc
   justify-content space-around
   align-items baseline
+  @media only screen and (max-width: 600px)
+    // width auto
+    h2, h5
+    h2
+      font-size 2.1rem!important
+    h5
+      font-size 2rem!important
   // h3, h4
   //   max-width 40vh
 
@@ -81,6 +93,13 @@ h1,button
   @extends .flex-row
   justify-content space-around
   align-items center
+  @media only screen and (max-width: 600px)
+    div
+      width 80vw!important
+    h2
+      font-size 2.1rem!important
+    img
+      display none
 
 .desc-icon
   width 30%
@@ -105,6 +124,12 @@ h1,button
   font-size 3rem
   h1
     width 50vw
+  @media only screen and (max-width: 600px)
+    h1
+      font-size 2.4rem!important
+    h3
+      i
+        font-size 2rem!important
 
 // ============ YFIRLIT ============ //
 
