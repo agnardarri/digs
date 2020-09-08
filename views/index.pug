@@ -4,10 +4,13 @@ block content
   //- Frontpage
   div(style = 'padding: 64px 16px;').w3-container.w3-teal.w3-center.frontpage
     //- img(src='images/hi_logo_is.png', width='300', style = 'padding-bottom: 45px')
-    h1.w3-margin-w3-jumbo
+    h1.w3-margin-w3-jumbo.w3-padding-32
       | Á þessari síðu má sjá yfirlit og upplýsingar um fornleifauppgreftri á Íslandi
-    a(href = '/digs/map', style = "font-weight: 700").w3-btn.w3-white.w3-border.desc-button
-      | Skoða kort
+    div.w3-container.flex-row
+      a(href = '/digs/yfirlit', style = "font-weight: 700").w3-btn.w3-white.w3-border.desc-button
+        | Skoða yfirlit
+      a(href = '/digs/map', style = "font-weight: 700").w3-btn.w3-white.w3-border.desc-button
+        | Skoða kort
   //- Description
   div.w3-container.w3-light-grey.w3-padding-32.frontpage-desc.flex-row
     //- span.desc-icon
@@ -40,7 +43,7 @@ block content
   //- Quote
   div.quote.w3-container.w3-black.w3-padding-64
     h1.w3-margin
-      | "Archaeology holds all the keys to understanding who we are and where we come from."
+      | "Í fornleifafræði felst lykillinn til skilnings á því hver við erum og hvaðan við komum."
     h3.w3-margin
       i(style="font-size: 2.3rem; font-weight: 300;")
         | - Sarah Parcak (fornleifafræðingur)
