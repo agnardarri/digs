@@ -10,7 +10,8 @@
     "watch-css": "stylus public/stylesheets/style.styl -o public/stylesheets/css -w",
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "watchstart": "npm run watch-css & nodemon ./bin/www"
+    "watchstart": "npm run watch-css & nodemon ./bin/www",
+    "update": "git commit -am 'ok' & git push heroku master & git push origin master"
   },
   "dependencies": {
     "async": "^3.2.0",
