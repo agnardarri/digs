@@ -175,7 +175,7 @@ map.on('load', () => {
         'type': 'FeatureCollection',
         'features': digs_
       };
-      console.log(digs);
+      // console.log(digs);
     map.addSource('digs', {'type': 'geojson', 'data': digs});
 
     tagz.forEach(function(tag) {

@@ -57,7 +57,12 @@ exports.yfirlit = async (req, res) => {
       // digs = results.digs.map((d) => {
       //   return d.title == "Ísleifsstaðir" ? "Isleifsstaðir" : d.title
       // });
-      var sorted = _.sortBy(results.digs, (d) => d.title.toUpperCase()),
+      String.prototype.removeAccents = function () {
+        return this
+            .replace(/[íìïî]/gi,"i");
+      };
+      
+      var sorted = _.sortBy(results.digs, (d) => d.title.removeAccents().toUpperCase()),
           sorted2 = _.sortBy(sorted, (d) => d.county.toUpperCase()),
           grouped = _.groupBy(sorted2, (d) => d.county);
 
