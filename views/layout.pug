@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
   head
-    title= title
+    title Fornleifauppgröftur.is
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
@@ -16,15 +16,15 @@ html(lang='en')
   body
     //- Navbar
     div.w3-top
-      div.w3-bar.w3-white.w3-card.w3-right-align.w3-large.navbary.w3-padding-small
-          a.w3-bar-item.w3-button.w3-hide-medium.w3-hide-large.w3-right.w3-padding-large.w3-hover-white.w3-large.w3-teal
+      div.w3-bar.w3-white.w3-card.w3-right-align.w3-large.w3-padding-small.navbary
+          a(href="javascript:void(0);", onclick="myFunction()").w3-bar-item.w3-button.w3-hide-medium.w3-hide-large.w3-right.w3-padding-large.w3-hover-white.w3-large.w3-white
             i.fa.fa-bars
           a(href='/').w3-bar-item.w3-button.w3-padding-large.navbary-left
             | fornleifauppgroftur.is
           a(href='/digs/map').w3-bar-item.w3-button.w3-hide-small.w3-padding-large.w3-hover-white
             | Kort
-            a(href='/digs/yfirlit').w3-bar-item.w3-button.w3-hide-small.w3-padding-large.w3-hover-white
-              | Yfirlit
+          a(href='/digs/yfirlit').w3-bar-item.w3-button.w3-hide-small.w3-padding-large.w3-hover-white
+            | Yfirlit
             //- div.w3-dropdown-content.w3-bar-block.w3-card-4
             //-   each dig in data.digs
             //-     a(href=dig.url).w3-bar-item.w3-button
@@ -54,4 +54,13 @@ html(lang='en')
     p
       | Icons made by 
       a(href= 'https://www.flaticon.com/authors/smashicons', target = '_blank') www.flaticon.com
-      
+  
+  script(type='text/javascript').
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }    
