@@ -352,6 +352,12 @@ h1,button
 
 .control-filter
   right: 10px
+  label
+    color black
+  h5
+    text-shadow -2px 2px 10px rgba(5, 5, 5, 1)
+    text-align center
+
 
 
 .control-names, .control-filter input[type='checkbox']:first-child + label {
@@ -375,15 +381,13 @@ h1,button
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-.control-filter input[type='checkbox'] + label {
-  background-color: rgba(#ff8a70, 0.8);
-  text-transform: capitalize;
-}
+.control-filter input[type='checkbox'] + label
+  background-color rgba(#ffffff, 0.8)
 
 .control-names, .control-filter input[type='checkbox'] + label:hover,
-.control-names, .control-filter input[type='checkbox']:checked + label {
-background-color: rgba(#ffffff, 0.8);
-}
+.control-names, .control-filter input[type='checkbox']:checked + label
+  background-color rgba(#bbbbbb, 0.8)
+  color black
 
 .control-names, .control-filter input[type='checkbox']:not(:checked) + label:before {
   content: '☐';
@@ -415,7 +419,10 @@ background-color: rgba(#ffffff, 0.8);
         display flex!important
         width 100%
         div.w3-large
+          vertical-align: middle;
           flex 2
+          @media only screen and (max-width: 1100px)
+            font-size 1.5rem!important
         div.list-val
           flex 2
 
@@ -446,6 +453,36 @@ background-color: rgba(#ffffff, 0.8);
   width 100%
   // text-shadow 2px 2px 0 #ffe, 4px 4px 0 #ffe;
   font-weight 500
+
+
+.detail-icon-wrapper
+  @extends .flex-row
+  align-items stretch
+  @media only screen and (max-width: 1100px)
+    flex-direction column!important
+    margin-bottom 30px
+  h4
+    // text-align center
+    font-weight bold
+    // margin-top 20px
+    margin-left 15px
+    flex 2
+    // margin-right auto
+
+
+.detail-icons
+  @extends .flex-row
+  width 100%
+  min-height 50px
+  flex 2
+  // justify-content flex-end
+  align-items stretch
+  margin-right 10px
+  div
+    @extends .flex-col
+    padding 5px 5px
+    span
+      margin 0 auto
 
 // ============ FORM ============ //
 // dig_form.pug

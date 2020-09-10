@@ -246,7 +246,14 @@ map.on('load', () => {
 
       var label = document.createElement('label');
       label.setAttribute('for', layerID);
-      label.textContent = tag == 'dyrabein' ? 'Dýrabein' : tag == 'grafir' ? 'Gröf/grafir' : tag;
+      label.textContent =
+        tag == 'dyrabein' ? 'Dýrabein' :
+        tag == 'gripir' ? 'Gripir' :
+        tag == 'grafir' ? 'Gröf/grafir' :
+        tag == 'mannabein' ? 'Mannabein' :
+        tag == 'mannvirki' ? 'Mannvirki' :
+        tag == 'ekkert' ? 'Engar minjar' :
+        tag;
       filterGroup.appendChild(label);
 
       // When the checkbox changes, update the visibility of the layer.

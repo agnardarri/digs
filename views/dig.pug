@@ -9,24 +9,34 @@ block content
     div.w3-half
       ul.w3-ul.flex-col
         li.w3-bar
-          div(style='font-weight:bold').w3-large Uppgraftarár:
+          div(style='font-weight:bold').w3-large Uppgraftarár
           div.list-val !{data.year}
         li.w3-bar
-          div(style='font-weight:bold').w3-large Uppgraftaraðilar:
+          div(style='font-weight:bold').w3-large Uppgraftaraðilar
           div.list-val !{data.people}
         li.w3-bar
-          div(style='font-weight:bold').w3-large Tegund uppgraftar:
+          div(style='font-weight:bold').w3-large Tegund uppgraftar
           div.list-val !{data.type}
         li.w3-bar
-          div(style='font-weight:bold').w3-large Staða uppgraftar:
+          div(style='font-weight:bold').w3-large Staða uppgraftar
           div.list-val !{data.finished == true ? "Lokið" : "Ólokið"}
         li.w3-bar
-          div(style='font-weight:bold').w3-large Hægt að skoða á vettvangi:
+          div(style='font-weight:bold').w3-large Hægt að skoða á vettvangi
           div.list-val !{data.observable}
         li.w3-bar
-          div(style='font-weight:bold').w3-large GPS-hnit:
+          div(style='font-weight:bold').w3-large GPS-hnit
           - var gps_title = data.gps_desc == '' ? '' : data.gps_desc
           div.list-val !{data.gps + ' ' + gps_title}
+      hr
+      div.detail-icon-wrapper
+        h4 Mannvistarleifar
+        div.detail-icons
+          - var icons = data.tags.map((d) => d == 'dýrabein' ? 'dyrabein' : d == 'gröf/grafir' ? 'grafir' : d);
+          - var icon_classes = icons.map((d) => 'yfirlit-' + d) //.join(' ')
+          each icon, i in icon_classes
+            div
+              span(class=icon)
+              label=data.tags[i]
     div.w3-half
       div#mapcontainer.w3-rest.w3-round-large
   div.w3-row-padding.w3-padding-64.w3-container.sumpics 
