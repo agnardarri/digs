@@ -35,11 +35,18 @@ h1,button
   display flex
   justify-content flex-end
   // box-shadow none
+  a
+    i
+      margin-top 10px
   .navbary-left
     margin-right auto
     font-weight 700
     font-size 2.5rem
 
+#navDemo
+    box-shadow 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
+    a
+      border-bottom 1px solid #e7e7e7
 
 // ============ FRONTPAGE ============ //
 
@@ -275,6 +282,7 @@ h1,button
   align-items stretch
   border-radius 25px
   width 200px
+  z-index 99999
 
 .popup-img-wrapper
   @extends .flex-col
@@ -453,7 +461,8 @@ h1,button
           flex 2
 
 .sumpics
-  // height 70vh
+  @media only screen and (max-width: 600px)
+    padding-top 0!important
   h1
     margin-bottom 20px!important
 
@@ -463,21 +472,17 @@ h1,button
     font-size 1.75rem
 
 .carousel-inner
-  // height 40vh
   img
-    // width 100%
     height 30vh!important
     margin 0 auto
     max-height 100%
     object-fit cover
 
 .img-disp
-  // background-color rgba(126, 126, 126, 0.6)
   position relative
   color black
   bottom 0
   width 100%
-  // text-shadow 2px 2px 0 #ffe, 4px 4px 0 #ffe;
   font-weight 500
 
 
@@ -486,14 +491,11 @@ h1,button
   align-items stretch
   @media only screen and (max-width: 1100px)
     flex-direction column!important
-    margin-bottom 30px
+    margin-bottom 25px
   h4
-    // text-align center
     font-weight bold
-    // margin-top 20px
     margin-left 15px
     flex 2
-    // margin-right auto
 
 
 .detail-icons
@@ -501,14 +503,46 @@ h1,button
   width 100%
   min-height 50px
   flex 2
-  // justify-content flex-end
   align-items stretch
   margin-right 10px
+  @media only screen and (max-width: 1100px)
+    justify-content center
   div
     @extends .flex-col
     padding 5px 5px
     span
       margin 0 auto
+
+// ============ ABOUT ============ //
+#about
+  @extends .flex-col
+  justify-content space-around
+
+.about-container
+  @extends .flex-row
+  @media only screen and (max-width: 900px)
+    flex-direction column!important
+
+.about-img-container
+  flex 1
+  @extends .flex-row
+  justify-content center
+  img
+    max-height 400px
+    height auto
+    width auto
+    @media only screen and (max-width: 900px)
+      max-height 300px
+
+.about-desc
+  max-width 50%
+  font-size 1.75rem
+  min-width 450px
+  @media only screen and (max-width: 900px)
+    max-width 100%
+  @media only screen and (max-width: 600px)
+    min-width 350px
+    font-size 1.5rem
 
 // ============ FORM ============ //
 // dig_form.pug

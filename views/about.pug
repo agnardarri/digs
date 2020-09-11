@@ -3,13 +3,16 @@ extends layout
 block content
   div#about.w3-container.w3-padding-64
     h2.w3-margin-w3-jumbo Um verkefnið
-    div.w3-twothird
-      p.w3-margin
-        | Verkefnið er unnið af Unu Helgu Jónsdóttur og er lokaverkefni í meistaranámi við fornleifafræðideild Háskóla Íslands. 
-        | Leiðbeinandi er Gavin Lucas, prófessor í fornleifafræði við HÍ. Una Helga starfar nú sem framkvæmdastjóri hjá menningaferðaskrifstofunni Mundo. Una hefur því ekki bakgrunn í tölvugeiranum en hefur mikinn áhuga á framsetningu fræðiefnis og því að almenningur, leikmenn og börn hafi greiðan aðgang að upplýsingum og fræðsluefni sem snertir alla þjóðina. Tæknilegar hliðar verkefnisins, uppsetning vefsíðu o.fl. voru unnar í sameiningu við eiginmann Unu Helgu, Agnar Darra Lárusson, og kann hún honum innilegar hjartans þakkir fyrir allt.
-        | Viljir þú lesa nánar um verkefnið, aðferðafræðina, takmarkanir, fyrri rannsóknir o.fl. getur þú 
-        a(href="http://hdl.handle.net/1946/36985", target="_blank")
-          | smellt hér 
-        | til að nálgast greinagerð höfundar sem fylgir verkefninu.
-    div.w3-rest.w3-container
-      img(src='/images/una.png',style="width:75%;").w3-padding.w3-circle
+    div.about-container
+      div.w3-container.about-desc
+        p.w3-margin
+          | Verkefnið er unnið af Unu Helgu Jónsdóttur og er lokaverkefni í meistaranámi við fornleifafræðideild Háskóla Íslands. 
+          | Leiðbeinandi er Gavin Lucas, prófessor í fornleifafræði við HÍ. Una Helga starfar nú sem framkvæmdastjóri hjá menningaferðaskrifstofunni Mundo. Una hefur því ekki bakgrunn í tölvugeiranum en hefur mikinn áhuga á framsetningu fræðiefnis og því að almenningur, leikmenn og börn hafi greiðan aðgang að upplýsingum og fræðsluefni sem snertir alla þjóðina. Tæknilegar hliðar verkefnisins, uppsetning vefsíðu o.fl. voru unnar í sameiningu við eiginmann Unu Helgu, Agnar Darra Lárusson, og kann hún honum innilegar hjartans þakkir fyrir allt.
+          br
+          br
+          | Viljir þú lesa nánar um verkefnið, aðferðafræðina, takmarkanir, fyrri rannsóknir o.fl. getur þú 
+          a(href="http://hdl.handle.net/1946/36985", target="_blank")
+            | smellt hér 
+          | til að nálgast greinagerð höfundar sem fylgir verkefninu.
+      div.w3-container.about-img-container
+        img(src='/images/una.png').w3-padding.w3-circle

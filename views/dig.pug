@@ -46,6 +46,9 @@ block content
         - var summsy = data.summary.replace('#', "</br></br>");
         //- - var summsy = summsy.replace(/\*+/g, "");
         p !{summsy}
+      //- div.w3-half.w3-row-padding
+        
+        
     div.w3-half.w3-row-padding
       h1.w3-margin-w3-jumbo Myndir
       if data.image_descriptions[0] == ''
@@ -72,6 +75,7 @@ block content
           a(href="#myCarousel", data-slide = "next").right.carousel-control
             span.glyphicon.glyphicon-chevron-right
             span.sr-only Next
+      
   div.w3-row-padding.w3-padding-64.w3-container
       div.w3-half.flex-col
         h1.w3-margin-w3-jumbo Nánari heimildir:
