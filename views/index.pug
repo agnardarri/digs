@@ -4,12 +4,12 @@ block content
   //- Frontpage
   div(style = 'padding: 64px 16px;').w3-container.w3-teal.w3-center.frontpage
     //- img(src='images/hi_logo_is.png', width='300', style = 'padding-bottom: 45px')
-    h1.w3-margin-w3-jumbo.w3-padding-32
+    h1.w3-margin-w3-jumbo.w3-padding-32.animate__animated.animate__bounce
       | Á þessari síðu má sjá yfirlit og upplýsingar um fornleifauppgreftri á Íslandi
     div.w3-container.flex-row
-      a(href = '/digs/yfirlit', style = "font-weight: 700").w3-btn.w3-white.w3-border.desc-button
+      a(href = '/digs/yfirlit', style = "font-weight: 700").w3-btn.w3-white.w3-border.desc-button.animate__animated.animate__bounceInLeft
         | Skoða yfirlit
-      a(href = '/digs/map', style = "font-weight: 700").w3-btn.w3-white.w3-border.desc-button
+      a(href = '/digs/map', style = "font-weight: 700").w3-btn.w3-white.w3-border.desc-button.animate__animated.animate__bounceInRight
         | Skoða kort
   //- Description
   div.w3-container.w3-light-grey.w3-padding-32.frontpage-desc.flex-row
@@ -27,7 +27,7 @@ block content
         | Á kortinu má skoða hvar uppgreftrir hafa verið framkvæmdir.
       p
         | Fornleifauppgreftrir í Borgarfjarðar- og Mýrarsýslu hafa verið færðir inn á kortið.
-      a(href = '/digs/map').w3-btn.w3-white.w3-border.desc-button-blue
+      a(href = '/digs/map').w3-btn.w3-white.w3-border.desc-button-blue.animate__animated.animate__bounce
         | Skoða kort
     img(style = 'width: ' + data.elementWidth + ";", src = '../images/map.png')
   //- Yfirlit section

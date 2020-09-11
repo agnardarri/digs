@@ -12,7 +12,7 @@ block content
         input(type = "checkbox", id = "show-names", checked = false)
         label(for = "show-names", style="margin-left: 5px;") Sýna heiti
       nav#control-filter.control-filter
-        h5 Sía eftir minjum
+        h5(onclick="filterFunction()") Sía eftir minjum
       div(style="display: block;").legend
         h4 Flokkun uppgraftra
         div
@@ -34,4 +34,15 @@ block content
     //-   label(for = "satellite-v9") Loftmynd
       
   script(src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js')
-  script(src='/javascripts/main.js')    
+  script(src='/javascripts/main.js')
+  script(type='text/javascript').
+    function filterFunction() {
+      var filters = document.getElementById("control-filter").children;
+      Array.from(filters).forEach(function(x) {
+        if (x.className.indexOf("show-the-label") == -1 && x.nodeName == "LABEL") {
+          x.className += " show-the-label";
+        } else { 
+          x.className = x.className.replace(" show-the-label", "");
+        }
+      })
+    }    
