@@ -65,7 +65,7 @@ const HandlePopups = function(e) {
   // console.log("Tags be ", e.features[0].properties);
   var digType = e.features[0].properties.type;
   var image_url = e.features[0].properties.image_url;
-  var finished = e.features[0].properties.finished == true ? 'Klárað' : 'Óklárað';
+  var finished = e.features[0].properties.finished == true ? 'Lokið' : 'Ólokið';
   var digPath = window.location.origin + '/digs/dig/' + e.features[0].properties.id;
   // Ensure that if the map is zoomed out such that multiple
   // copies of the feature are visible, the popup appears
